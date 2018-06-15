@@ -1,5 +1,4 @@
 /*
-×÷ÒµÇó¹ý£¡£¡£¡£¡£¡Âú·Ö°¡£¡£¡£¡£¡Âú·Ö°¡£¡£¡£¡£¡
 ##########################################################################################################
 				  _ooOoo_
 				 o8888888o
@@ -20,33 +19,33 @@
 ======`-.____`-.___\_____/___.-`____.-'======
 `=---='
 .............................................
-·ð×æ±£ÓÓ             ÓÀÎÞBUG
-·ðÔ»:
-Ð´×ÖÂ¥ÀïÐ´×Ö¼ä£¬Ð´×Ö¼äÀï³ÌÐòÔ±£»
-³ÌÐòÈËÔ±Ð´³ÌÐò£¬ÓÖÄÃ³ÌÐò»»¾ÆÇ®¡£
-¾ÆÐÑÖ»ÔÚÍøÉÏ×ø£¬¾Æ×í»¹À´ÍøÏÂÃß£»
-¾Æ×í¾ÆÐÑÈÕ¸´ÈÕ£¬ÍøÉÏÍøÏÂÄê¸´Äê¡£
-µ«Ô¸ÀÏËÀµçÄÔ¼ä£¬²»Ô¸¾Ï¹ªÀÏ°åÇ°£»
-±¼³Û±¦Âí¹óÕßÈ¤£¬¹«½»×ÔÐÐ³ÌÐòÔ±¡£
-±ðÈËÐ¦ÎÒß¯·èñ²£¬ÎÒÐ¦×Ô¼ºÃüÌ«¼ú£»
-²»¼ûÂú½ÖÆ¯ÁÁÃÃ£¬ÄÄ¸ö¹éµÃ³ÌÐòÔ±£¿
+ä½›ç¥–ä¿ä½‘             æ°¸æ— BUG
+ä½›æ›°:
+å†™å­—æ¥¼é‡Œå†™å­—é—´ï¼Œå†™å­—é—´é‡Œç¨‹åºå‘˜ï¼›
+ç¨‹åºäººå‘˜å†™ç¨‹åºï¼Œåˆæ‹¿ç¨‹åºæ¢é…’é’±ã€‚
+é…’é†’åªåœ¨ç½‘ä¸Šåï¼Œé…’é†‰è¿˜æ¥ç½‘ä¸‹çœ ï¼›
+é…’é†‰é…’é†’æ—¥å¤æ—¥ï¼Œç½‘ä¸Šç½‘ä¸‹å¹´å¤å¹´ã€‚
+ä½†æ„¿è€æ­»ç”µè„‘é—´ï¼Œä¸æ„¿éž èº¬è€æ¿å‰ï¼›
+å¥”é©°å®é©¬è´µè€…è¶£ï¼Œå…¬äº¤è‡ªè¡Œç¨‹åºå‘˜ã€‚
+åˆ«äººç¬‘æˆ‘å¿’ç–¯ç™«ï¼Œæˆ‘ç¬‘è‡ªå·±å‘½å¤ªè´±ï¼›
+ä¸è§æ»¡è¡—æ¼‚äº®å¦¹ï¼Œå“ªä¸ªå½’å¾—ç¨‹åºå‘˜ï¼Ÿ
 ##########################################################################################################*/
 #include<stdio.h>
 #include<time.h>
 #include<stdlib.h>
 #include<cstring>
 #include <windows.h>
-#pragma warning(disable:4996)//Èç¹û±àÒëÆ÷²»ÊÇVS°ÑÕâÐÐ´úÂë×¢ÊÍµô
-int month_days[13] = { 0,31,28,31,30,31,30,31,31,30,31,30,31 };//Æ½ÄêµÄÃ¿ÔÂµÄÌìÊý
-int month_days_s[13] = { 0,31,29,31,30,31,30,31,31,30,31,30,31 };//ÈòÄêµÄÃ¿ÔÂµÄÌìÊý
+#pragma warning(disable:4996)//å¦‚æžœç¼–è¯‘å™¨ä¸æ˜¯VSæŠŠè¿™è¡Œä»£ç æ³¨é‡ŠæŽ‰
+int month_days[13] = { 0,31,28,31,30,31,30,31,31,30,31,30,31 };//å¹³å¹´çš„æ¯æœˆçš„å¤©æ•°
+int month_days_s[13] = { 0,31,29,31,30,31,30,31,31,30,31,30,31 };//é—°å¹´çš„æ¯æœˆçš„å¤©æ•°
 char month_name[14][10] = { "","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Set","Oct","Nov","Dec" };
 char week_name[8][10] = { "","Sum","Mon","Tue","Wed","Tur","Fri","Sat" };
-bool judge_runnian(int year)//ÅÐ¶ÏÊÇ·ñÎªÈòÄê£¬ÊÇÈòÄê·µ»Ø1£¬²»ÊÇ·µ»Ø0
+bool judge_runnian(int year)//åˆ¤æ–­æ˜¯å¦ä¸ºé—°å¹´ï¼Œæ˜¯é—°å¹´è¿”å›ž1ï¼Œä¸æ˜¯è¿”å›ž0
 {
 	if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0))return 1;
 	else return 0;
 }
-int input()//Ñ¡Ôñ¹¦ÄÜÊ±ÊäÈë£¬ÓÐÊäÈëµÄÅÐ´í
+int input()//é€‰æ‹©åŠŸèƒ½æ—¶è¾“å…¥ï¼Œæœ‰è¾“å…¥çš„åˆ¤é”™
 {
 	char a[1000];
 	scanf("%s", a);
@@ -54,19 +53,19 @@ int input()//Ñ¡Ôñ¹¦ÄÜÊ±ÊäÈë£¬ÓÐÊäÈëµÄÅÐ´í
 	if (a[0] >= '0'&&a[0] <= '3')return a[0] - '0';
 	return -1;
 }
-void getvalue_function1(int *year, int *month, int *day)//Îª¹¦ÄÜ1»ñÈ¡ÄêÔÂÈÕµÄÖµ
+void getvalue_function1(int *year, int *month, int *day)//ä¸ºåŠŸèƒ½1èŽ·å–å¹´æœˆæ—¥çš„å€¼
 {
 	time_t timep;
 	struct tm *p;
 	time(&timep);
 	p = localtime(&timep);
-	int year_system = 1900 + p->tm_year;//»ñÈ¡µ±ÄêÏµÍ³Äê·Ý
-	int month_system = 1 + p->tm_mon;//»ñÈ¡µ±Ç°ÏµÍ³ÔÂ·Ý
-	int day_system = p->tm_mday;//»ñÈ¡µ±Ç°ÏµÍ³µÄÌì
+	int year_system = 1900 + p->tm_year;//èŽ·å–å½“å¹´ç³»ç»Ÿå¹´ä»½
+	int month_system = 1 + p->tm_mon;//èŽ·å–å½“å‰ç³»ç»Ÿæœˆä»½
+	int day_system = p->tm_mday;//èŽ·å–å½“å‰ç³»ç»Ÿçš„å¤©
 	char yea[100], mon[100], da[100];
 	int yeart = 0, montht = 0, dayt = 0;
 	bool flag = 0;
-	printf("Çë°´Ë³ÐòÊäÈëÄêÔÂÈÕ£¬ÒÔ¿Õ¸ñ»òÕß»Ø³µÎªÖ¹\n");
+	printf("è¯·æŒ‰é¡ºåºè¾“å…¥å¹´æœˆæ—¥ï¼Œä»¥ç©ºæ ¼æˆ–è€…å›žè½¦ä¸ºæ­¢\n");
 	do {
 		flag = 0;
 		scanf("%s%s%s", yea, mon, da);
@@ -90,35 +89,35 @@ void getvalue_function1(int *year, int *month, int *day)//Îª¹¦ÄÜ1»ñÈ¡ÄêÔÂÈÕµÄÖµ
 				flag = 1;
 				goto end;
 			}
-		}//Èç¹ûÄêÔÂÈÕµÄÊ±¼äÀïÓÐ·ÇÊý×Ö×Ö·û£¬ÔòÊäÈëÒ»¶¨Îª·Ç·¨
-		yeart = atoi(yea);//atoi()º¯Êý ½«×Ö·û´®×ª»»ÎªÊý×Ö
+		}//å¦‚æžœå¹´æœˆæ—¥çš„æ—¶é—´é‡Œæœ‰éžæ•°å­—å­—ç¬¦ï¼Œåˆ™è¾“å…¥ä¸€å®šä¸ºéžæ³•
+		yeart = atoi(yea);//atoi()å‡½æ•° å°†å­—ç¬¦ä¸²è½¬æ¢ä¸ºæ•°å­—
 		dayt = atoi(da);
 		montht = atoi(mon);
 
-		if (yeart < year_system) { flag = 1; goto end; }//ÊäÈëÄê·ÝÔçÓÚÏµÍ³Äê·Ý
-		if (montht>12 || montht <= 0 || dayt <= 0) { flag = 1; goto end; }//ÊäÈëÔÂ·Ý·Ç·¨
-		if ((judge_runnian(yeart) && dayt>month_days_s[montht]) || (!judge_runnian(yeart) && dayt>month_days[montht])) { flag = 1; goto end; }//´ËÔÂÖÐÃ»ÓÐÊäÈëµÄÌì
+		if (yeart < year_system) { flag = 1; goto end; }//è¾“å…¥å¹´ä»½æ—©äºŽç³»ç»Ÿå¹´ä»½
+		if (montht>12 || montht <= 0 || dayt <= 0) { flag = 1; goto end; }//è¾“å…¥æœˆä»½éžæ³•
+		if ((judge_runnian(yeart) && dayt>month_days_s[montht]) || (!judge_runnian(yeart) && dayt>month_days[montht])) { flag = 1; goto end; }//æ­¤æœˆä¸­æ²¡æœ‰è¾“å…¥çš„å¤©
 		if ((yeart == year_system && montht == month_system && dayt<day_system) || (yeart == year_system && montht < month_system)) { flag = 1; goto end; }
 
 	end:
 		if (flag)
 		{
-			printf("ÊäÈëµÄÄêÔÂÈÕÓÐÎó£¬ÇëÖØÐÂÊäÈë£º£¨×¢ÒâÊäÈëÈÕÆÚµÄºÏ·¨ÐÔ£¬ÇÒÈÕÆÚ²»ÄÜÔçÓÚ½ñÌìÅ¶£©\n");
+			printf("è¾“å…¥çš„å¹´æœˆæ—¥æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ï¼šï¼ˆæ³¨æ„è¾“å…¥æ—¥æœŸçš„åˆæ³•æ€§ï¼Œä¸”æ—¥æœŸä¸èƒ½æ—©äºŽä»Šå¤©å“¦ï¼‰\n");
 			continue;
 		}
-	} while (flag);//Èç¹ûÊäÈëµÄÊý¾ÝÓÐÎó£¨ÎÞ´ËÑ¡Ïî£¬»òÕßÓÐ·ÇÊý×Ö×Ö·û£¬»òÕßÊäÈëµÄÈÕÆÚÔçÓÚÏµÍ³Ê±¼ä£¬¶¼»áÅÐ´í£¬ÖØÐÂÊäÈëÊ±¼ä£©
-	////²âÊÔµã
+	} while (flag);//å¦‚æžœè¾“å…¥çš„æ•°æ®æœ‰è¯¯ï¼ˆæ— æ­¤é€‰é¡¹ï¼Œæˆ–è€…æœ‰éžæ•°å­—å­—ç¬¦ï¼Œæˆ–è€…è¾“å…¥çš„æ—¥æœŸæ—©äºŽç³»ç»Ÿæ—¶é—´ï¼Œéƒ½ä¼šåˆ¤é”™ï¼Œé‡æ–°è¾“å…¥æ—¶é—´ï¼‰
+	////æµ‹è¯•ç‚¹
 	*year = yeart;
 	*month = montht;
 	*day = dayt;
 
 }
-void getvalue_function3(int *year, int *month)//Îª¹¦ÄÜ3»ñÈ¡ÄêÔÂµÄÖµ
+void getvalue_function3(int *year, int *month)//ä¸ºåŠŸèƒ½3èŽ·å–å¹´æœˆçš„å€¼
 {
 	char a[100], b[100];
 	bool flag = 0;
 	int yea, mon;
-	printf("Çë°´Ë³ÐòÊäÈëÄêÔÂ£¬ÖÐ¼äÒÔ»Ø³µ»òÕß¿Õ¸ñ·Ö¿ª\n");
+	printf("è¯·æŒ‰é¡ºåºè¾“å…¥å¹´æœˆï¼Œä¸­é—´ä»¥å›žè½¦æˆ–è€…ç©ºæ ¼åˆ†å¼€\n");
 	do
 	{
 		scanf("%s%s", a, b);
@@ -135,18 +134,18 @@ void getvalue_function3(int *year, int *month)//Îª¹¦ÄÜ3»ñÈ¡ÄêÔÂµÄÖµ
 		}
 		if (flag)
 		{
-			printf("ÊäÈëµÄÄêÔÂÓÐÎó£¬ÇëÖØÐÂÊäÈë£º\n");
+			printf("è¾“å…¥çš„å¹´æœˆæœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ï¼š\n");
 			continue;
 		}
 	} while (flag);
 	*year = atoi(a);
 	*month = mon;
 }
-int getvalue_function2()//Îª¹¦ÄÜ2»ñÈ¡ÄêµÄÖµ
+int getvalue_function2()//ä¸ºåŠŸèƒ½2èŽ·å–å¹´çš„å€¼
 {
 	char a[1000];
 	bool flag;
-	printf("ÇëÊäÈëÒª´òÓ¡ÈÕÀúµÄÄê·Ý:\n");
+	printf("è¯·è¾“å…¥è¦æ‰“å°æ—¥åŽ†çš„å¹´ä»½:\n");
 	do {
 		flag = 0;
 		scanf("%s", a);
@@ -157,14 +156,14 @@ int getvalue_function2()//Îª¹¦ÄÜ2»ñÈ¡ÄêµÄÖµ
 			}
 		}
 		if (flag) {
-			printf("ÄúÊäÈëµÄÈÕÆÚÓÐÎó£¬ÇëÖØÐÂÊäÈë:\n");
+			printf("æ‚¨è¾“å…¥çš„æ—¥æœŸæœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥:\n");
 		}
 	} while (flag);
 	int year = atoi(a);
-	printf("\tÄúÑ¡ÔñµÄÄê·ÝÊÇ%d\n\n", year);
+	printf("\tæ‚¨é€‰æ‹©çš„å¹´ä»½æ˜¯%d\n\n", year);
 	return year;
 }
-int ReturnWeekDay(int iYear, int iMonth)//²ÌÀÕ¹«Ê½ÇóÐÇÆÚ¼¸ 
+int ReturnWeekDay(int iYear, int iMonth)//è”¡å‹’å…¬å¼æ±‚æ˜ŸæœŸå‡  
 {
 	int iDay = 1;
 	int iWeek = 0;
@@ -185,9 +184,9 @@ int ReturnWeekDay(int iYear, int iMonth)//²ÌÀÕ¹«Ê½ÇóÐÇÆÚ¼¸
 		d = iDay;
 	}
 
-	iWeek = y + y / 4 + c / 4 - 2 * c + 26 * (m + 1) / 10 + d - 1;    //²ÌÀÕ¹«Ê½
-	iWeek = iWeek >= 0 ? (iWeek % 7) : (iWeek % 7 + 7);    //iWeekÎª¸ºÊ±È¡Ä£
-	if (iWeek == 0)    //ÐÇÆÚÈÕ²»×÷ÎªÒ»ÖÜµÄµÚÒ»Ìì
+	iWeek = y + y / 4 + c / 4 - 2 * c + 26 * (m + 1) / 10 + d - 1;    //è”¡å‹’å…¬å¼
+	iWeek = iWeek >= 0 ? (iWeek % 7) : (iWeek % 7 + 7);    //iWeekä¸ºè´Ÿæ—¶å–æ¨¡
+	if (iWeek == 0)    //æ˜ŸæœŸæ—¥ä¸ä½œä¸ºä¸€å‘¨çš„ç¬¬ä¸€å¤©
 	{
 		iWeek = 7;
 	}
@@ -206,44 +205,44 @@ void function1()
 	int year_system = 1900 + p->tm_year;
 	int month_system = 1 + p->tm_mon;
 	int day_system = p->tm_mday;
-	getvalue_function1(year, month, day);//»ñÈ¡Êý¾Ý
+	getvalue_function1(year, month, day);//èŽ·å–æ•°æ®
 	//printf("%d %d %d\n", *year, *month, *day);
 	int sum_day = 0;
-	for (int i = year_system + 1; i < *year; i++)//½«ÕûÄêµÄÌìÊý¼ÓÆðÀ´
+	for (int i = year_system + 1; i < *year; i++)//å°†æ•´å¹´çš„å¤©æ•°åŠ èµ·æ¥
 	{
 		if (judge_runnian(i))sum_day += 366;
 		else sum_day += 365;
 	}
 	//printf("%d\n", sum_day);//
-	if (year_system == *year)//ÊäÈëÄê·ÝµÈÓÚÏµÍ³Ê±¼äµÄÄê·Ý
+	if (year_system == *year)//è¾“å…¥å¹´ä»½ç­‰äºŽç³»ç»Ÿæ—¶é—´çš„å¹´ä»½
 	{
-		if (month_system == *month)sum_day = sum_day + *day - day_system;//ÊäÈëµÄÔÂ·ÝµÈÓÚÏµÍ³µÄÔÂ·Ý
+		if (month_system == *month)sum_day = sum_day + *day - day_system;//è¾“å…¥çš„æœˆä»½ç­‰äºŽç³»ç»Ÿçš„æœˆä»½
 		else
 		{
-			if (judge_runnian(*year)) {//ÅÐ¶ÏÊÇ·ñÎªÈòÄê
+			if (judge_runnian(*year)) {//åˆ¤æ–­æ˜¯å¦ä¸ºé—°å¹´
 				for (int i = month_system + 1; i < *month; i++)
-					sum_day += month_days_s[i];//°ÑÕûÔÂµÄÌìÊý¼ÓÆðÀ´
-				sum_day += month_days_s[*month] - day_system - 1;//°ÑÏµÍ³ÔÂ·ÝµÄÊ±¼äÊ£ÏÂµÄÌìÊý¼ÓÆðÀ´
+					sum_day += month_days_s[i];//æŠŠæ•´æœˆçš„å¤©æ•°åŠ èµ·æ¥
+				sum_day += month_days_s[*month] - day_system - 1;//æŠŠç³»ç»Ÿæœˆä»½çš„æ—¶é—´å‰©ä¸‹çš„å¤©æ•°åŠ èµ·æ¥
 			}
 			else {
 				for (int i = month_system + 1; i < *month; i++)
-					sum_day += month_days[i];//°ÑÕûÔÂµÄÌìÊý¼ÓÆðÀ´
-				sum_day += month_days[*month] - day_system - 1;//°ÑÏµÍ³ÔÂ·ÝµÄÊ±¼äÊ£ÏÂµÄÌìÊý¼ÓÆðÀ´
+					sum_day += month_days[i];//æŠŠæ•´æœˆçš„å¤©æ•°åŠ èµ·æ¥
+				sum_day += month_days[*month] - day_system - 1;//æŠŠç³»ç»Ÿæœˆä»½çš„æ—¶é—´å‰©ä¸‹çš„å¤©æ•°åŠ èµ·æ¥
 			}
-			sum_day += *day;//°ÑÊäÈëµÄÌìÊý¼ÓÆðÀ´
+			sum_day += *day;//æŠŠè¾“å…¥çš„å¤©æ•°åŠ èµ·æ¥
 		}
 	}
-	else {//ÊäÈëÄê·Ý²»µÈÓÚÏµÍ³Äê·Ý
-		if (judge_runnian(*year)) {//ÊäÈëµÄÄê·ÝÊÇÈòÄê
-			for (int i = 1; i < *month; i++)sum_day += month_days_s[i];//°ÑÊäÈëÄê·ÝµÄÌìÊý¼ÓÆðÀ´
+	else {//è¾“å…¥å¹´ä»½ä¸ç­‰äºŽç³»ç»Ÿå¹´ä»½
+		if (judge_runnian(*year)) {//è¾“å…¥çš„å¹´ä»½æ˜¯é—°å¹´
+			for (int i = 1; i < *month; i++)sum_day += month_days_s[i];//æŠŠè¾“å…¥å¹´ä»½çš„å¤©æ•°åŠ èµ·æ¥
 			sum_day += *day;
 		}
 		else {
 			for (int i = 1; i < *month; i++)sum_day += month_days[i];
 			sum_day += *day;
 		}
-		if (judge_runnian(year_system)) {//ÏµÍ³µÄÄê·ÝÊÇÈòÄê
-			for (int i = month_system + 1; i <= 12; i++)sum_day += month_days_s[i];//°ÑÏµÍ³µÄÄê·ÝÊ£ÏÂµÄÌìÊý¼ÓÆðÀ´
+		if (judge_runnian(year_system)) {//ç³»ç»Ÿçš„å¹´ä»½æ˜¯é—°å¹´
+			for (int i = month_system + 1; i <= 12; i++)sum_day += month_days_s[i];//æŠŠç³»ç»Ÿçš„å¹´ä»½å‰©ä¸‹çš„å¤©æ•°åŠ èµ·æ¥
 			sum_day += month_days_s[month_system] - day_system;
 		}
 		else {
@@ -251,53 +250,53 @@ void function1()
 			sum_day += month_days[month_system] - day_system;
 		}
 	}
-	printf("\n\n\t%d-%d-%d¾àÀë½ñÌìÓÐ%dÌì\n\n\n\n\n", *year, *month, *day, sum_day);//Êä³ö
+	printf("\n\n\t%d-%d-%dè·ç¦»ä»Šå¤©æœ‰%då¤©\n\n\n\n\n", *year, *month, *day, sum_day);//è¾“å‡º
 	delete year;
 	delete month;
-	delete day;//ÊÍ·Å
+	delete day;//é‡Šæ”¾
 }
 void function2()
 {
-	int year = getvalue_function2();//Îª¹¦ÄÜ2»ñÈ¡Äê·Ý
+	int year = getvalue_function2();//ä¸ºåŠŸèƒ½2èŽ·å–å¹´ä»½
 	FILE*fp;
-	fp = fopen("abc.txt", "wb");//´ò¿ªÎÄ¼þ
+	fp = fopen("abc.txt", "wb");//æ‰“å¼€æ–‡ä»¶
 	if (NULL == fp)
 	{
-		printf("±§Ç¸£¬ÎÄ¼þ´ò¿ªÓÐÎó£¬ÇëÁªÏµÈí¼þ¿ª·¢Õß\n");
-		return;//´ò¿ª¿ÕÎÄ¼þÖ¸ÕëÒª·µ»Ø´íÎó´úÂë
+		printf("æŠ±æ­‰ï¼Œæ–‡ä»¶æ‰“å¼€æœ‰è¯¯ï¼Œè¯·è”ç³»è½¯ä»¶å¼€å‘è€…\n");
+		return;//æ‰“å¼€ç©ºæ–‡ä»¶æŒ‡é’ˆè¦è¿”å›žé”™è¯¯ä»£ç 
 	}
 	fprintf(fp, "-----------------------------------------%d-------------------------------------------\r\n", year);
 	int riqi[7][50];
 	int t[4];
-	for (int i = 0; i < 4; i++) {//Ã¿´Î²¢ÅÅÊä³öÒ»¸ö¼¾¶ÈµÄÈÕÀú
-		fprintf(fp, "%s", month_name[i * 3 + 1]);//´òÓ¡ÔÂ·ÝµÄÃû³Æ
+	for (int i = 0; i < 4; i++) {//æ¯æ¬¡å¹¶æŽ’è¾“å‡ºä¸€ä¸ªå­£åº¦çš„æ—¥åŽ†
+		fprintf(fp, "%s", month_name[i * 3 + 1]);//æ‰“å°æœˆä»½çš„åç§°
 		for (int j = 0; j < 27; j++)fprintf(fp, " ");
 		fprintf(fp, "%s", month_name[i * 3 + 2]);
 		for (int j = 0; j < 27; j++)fprintf(fp, " ");
 		fprintf(fp, "%s", month_name[i * 3 + 3]);
 		fprintf(fp, "\r\n");
-		for (int j = 1; j <= 7; j++)fprintf(fp, " %s", week_name[j]);//´òÓ¡ÖÜ¼¸µÄÃû³Æ
+		for (int j = 1; j <= 7; j++)fprintf(fp, " %s", week_name[j]);//æ‰“å°å‘¨å‡ çš„åç§°
 		fprintf(fp, "  ");
 		for (int j = 1; j <= 7; j++)fprintf(fp, " %s", week_name[j]);
 		fprintf(fp, "  ");
 		for (int j = 1; j <= 7; j++)fprintf(fp, " %s", week_name[j]);
 		fprintf(fp, "\r\n");
-		memset(riqi, 0, sizeof(riqi));//Ìî³äÊý×é
+		memset(riqi, 0, sizeof(riqi));//å¡«å……æ•°ç»„
 		for (int j = 1; j <= 3; j++) {
-			t[j] = ReturnWeekDay(year, i * 3 + j);//ÅÐ¶Ï´ËÄê´ËÔÂµÄµÚÒ»ÌìÊÇÖÜ¼¸
+			t[j] = ReturnWeekDay(year, i * 3 + j);//åˆ¤æ–­æ­¤å¹´æ­¤æœˆçš„ç¬¬ä¸€å¤©æ˜¯å‘¨å‡ 
 		}
-		int l[3] = { 0 };//¼ÇÂ¼µ±Ç°Õâ¸ö¼¾¶ÈÈý¸öÔÂµÄÈÕÀúµÄÐÐÊý
+		int l[3] = { 0 };//è®°å½•å½“å‰è¿™ä¸ªå­£åº¦ä¸‰ä¸ªæœˆçš„æ—¥åŽ†çš„è¡Œæ•°
 		for (int j = 0; j < 3; j++)
 		{
 
-			if (t[j + 1] != 7) {//Èç¹ûµÚÒ»ÌìÊÇ²»ÊÇÖÜÒ»£¬Ôò°ÑÖÜ¼¸Ç°µÄÈÕÆÚÌî³äÎª0
+			if (t[j + 1] != 7) {//å¦‚æžœç¬¬ä¸€å¤©æ˜¯ä¸æ˜¯å‘¨ä¸€ï¼Œåˆ™æŠŠå‘¨å‡ å‰çš„æ—¥æœŸå¡«å……ä¸º0
 				for (int m = 0; m < t[j + 1]; m++)
 					riqi[0][m + j * 7] = 0;
-				l[j] = 1;//´ËÔÂµÄÐÐ¼Ó1
+				l[j] = 1;//æ­¤æœˆçš„è¡ŒåŠ 1
 			}
-			if (judge_runnian(year)) {//Èç¹û´ËÄêÎªÈòÄê
-				for (int m = 1; m <= month_days_s[3 * i + j + 1]; m++, t[j + 1]++) {//°Ñ´ËÔÂÏàÓ¦µÄÊý×éÇøÓòÌî³ä³ÉµÚ¼¸ºÅ £¬ÏÂÍ¬
-					if (t[j + 1] % 7 == 0)l[j]++;//·êÆßÐÐÊý¼Ó1
+			if (judge_runnian(year)) {//å¦‚æžœæ­¤å¹´ä¸ºé—°å¹´
+				for (int m = 1; m <= month_days_s[3 * i + j + 1]; m++, t[j + 1]++) {//æŠŠæ­¤æœˆç›¸åº”çš„æ•°ç»„åŒºåŸŸå¡«å……æˆç¬¬å‡ å· ï¼Œä¸‹åŒ
+					if (t[j + 1] % 7 == 0)l[j]++;//é€¢ä¸ƒè¡Œæ•°åŠ 1
 					riqi[l[j]][t[j + 1] % 7 + 7 * j] = m;
 				}
 			}
@@ -308,9 +307,9 @@ void function2()
 				}
 			}
 		}
-		for (int h = 0; h <= 6; h++) {//½«´Ë¼¾¶ÈÈÕÀúÍ¬Ê±´òÓ¡ÄÃ³öÀ´
-			for (int j = 0; j < 3; j++) {//Ã¿¸öÔÂ
-				for (int l = 0; l < 7; l++) {//Ã¿ÖÜ
+		for (int h = 0; h <= 6; h++) {//å°†æ­¤å­£åº¦æ—¥åŽ†åŒæ—¶æ‰“å°æ‹¿å‡ºæ¥
+			for (int j = 0; j < 3; j++) {//æ¯ä¸ªæœˆ
+				for (int l = 0; l < 7; l++) {//æ¯å‘¨
 					if (riqi[h][l + j * 7] != 0)fprintf(fp, "%4d", riqi[h][l + j * 7]);
 					else fprintf(fp, "    ");
 					if (l == 6 && j != 2)fprintf(fp, "  ");
@@ -319,7 +318,7 @@ void function2()
 			fprintf(fp, "\r\n");
 		}
 	}
-	printf("%dÄêµÄÈÕÀúÒÑÊäÈëµ½¡°abc.txt¡±ÖÐ£¬Çë²é¿´\n\n\n", year);
+	printf("%då¹´çš„æ—¥åŽ†å·²è¾“å…¥åˆ°â€œabc.txtâ€ä¸­ï¼Œè¯·æŸ¥çœ‹\n\n\n", year);
 	fclose(fp);
 }
 void function3()
@@ -328,7 +327,7 @@ void function3()
 	int *month = new int;
 	getvalue_function3(year, month);
 	int t = ReturnWeekDay(*year, *month);
-	printf("\n\t%dÄê%dÔÂµÄÈÕÀúÎª\n", *year, *month);
+	printf("\n\t%då¹´%dæœˆçš„æ—¥åŽ†ä¸º\n", *year, *month);
 	for (int j = 1; j <= 7; j++)printf(" %s", week_name[j]);
 	printf("\n");
 	if (t != 7)
@@ -354,33 +353,33 @@ void function3()
 int main()
 {
 	time_t t;
-	time(&t);//»ñÈ¡ÏµÍ³Ê±¼ä
-	printf("\tÓêÁØÁå \n\tÁøÓÀ\nº®²õÆàÇÐ£¬¶Ô³¤Í¤Íí£¬ÖèÓê³õÐª¡£\n¶¼ÃÅÕÊÒûÎÞÐ÷£¬ÁôÁµ´¦, À¼ÖÛ´ß·¢¡£\nÖ´ÊÖÏà¿´ÀáÑÛ£¬¾¹ÎÞÓïÄýÒ­¡£\nÄîÈ¥È¥£¬Ç§ÀïÑÌ²¨£¬Äºö°³Á³Á³þÌìÀ«¡£\n¶àÇé×Ô¹ÅÉËÀë±ð£¬¸üÄÇ¿°, ÀäÂäÇåÇï½Ú, ½ñÏü¾ÆÐÑºÎ´¦¡£\nÑîÁø°¶, Ïþ·ç²ÐÔÂ¡£\n´ËÈ¥¾­Äê£¬Ó¦ÊÇÁ¼³½ºÃ¾°ÐéÉè¡£\n±ã×ÝÓÐÇ§ÖÖ·çÇé£¬¸üÓëºÎÈËËµ¡£\n"); 
-	printf("-------------------------------------\n\tÏµÍ³Ê±¼äÎª %s  \n", ctime(&t));
-	printf("\t×÷Õß:shangxiaomi\n\tÀ²À²À²£¬»¶Ó­Ê¹ÓÃÎÒÐ´µÄÈÕÀú³ÌÐòÅ¶\n\tºÃÊ¹µÄ»°¸øÎÒµã´òÉÍ°É\n\tQQ:724900708\n-------------------------------------\n");
+	time(&t);//èŽ·å–ç³»ç»Ÿæ—¶é—´
+	printf("\té›¨éœ–é“ƒ \n\tæŸ³æ°¸\nå¯’è‰å‡„åˆ‡ï¼Œå¯¹é•¿äº­æ™šï¼Œéª¤é›¨åˆæ­‡ã€‚\néƒ½é—¨å¸é¥®æ— ç»ªï¼Œç•™æ‹å¤„, å…°èˆŸå‚¬å‘ã€‚\næ‰§æ‰‹ç›¸çœ‹æ³ªçœ¼ï¼Œç«Ÿæ— è¯­å‡å™Žã€‚\nå¿µåŽ»åŽ»ï¼Œåƒé‡ŒçƒŸæ³¢ï¼Œæš®éœ­æ²‰æ²‰æ¥šå¤©é˜”ã€‚\nå¤šæƒ…è‡ªå¤ä¼¤ç¦»åˆ«ï¼Œæ›´é‚£å ª, å†·è½æ¸…ç§‹èŠ‚, ä»Šå®µé…’é†’ä½•å¤„ã€‚\næ¨æŸ³å²¸, æ™“é£Žæ®‹æœˆã€‚\næ­¤åŽ»ç»å¹´ï¼Œåº”æ˜¯è‰¯è¾°å¥½æ™¯è™šè®¾ã€‚\nä¾¿çºµæœ‰åƒç§é£Žæƒ…ï¼Œæ›´ä¸Žä½•äººè¯´ã€‚\n"); 
+	printf("-------------------------------------\n\tç³»ç»Ÿæ—¶é—´ä¸º %s  \n", ctime(&t));
+	printf("\tä½œè€…:shangxiaomi\n\tå•¦å•¦å•¦ï¼Œæ¬¢è¿Žä½¿ç”¨æˆ‘å†™çš„æ—¥åŽ†ç¨‹åºå“¦\n\tå¥½ä½¿çš„è¯ç»™æˆ‘ç‚¹æ‰“èµå§\n\tQQ:724900708\n-------------------------------------\n");
 	int choose;
 	do
 	{
-		printf("---------------------------------------±¾³ÌÐòÓÐÒÔÏÂ¹¦ÄÜ---------------------------------\n");
-		printf("\t\t0:ÍË³ö³ÌÐò\n");
-		printf("\t\t1:ÊäÈëÎ´À´µÄÒ»¸öÈÕÆÚ£¬Êä³ö¾àÀë½ñÌìÓÐ¶à¾Ã\n");
-		printf("\t\t2:ÊäÈëÒ»¸öÄê·Ý£¬½«¸ÃÄêÈÕÀúÊä³öµ½ÎÄ¼þÖÐ\n");
-		printf("\t\t3:ÊäÈëÄê·ÝÔÂ·Ý,½«´ËÄê´ËÔÂµÄÈÕÀúÊä³öµ½ÆÁÄ»ÖÐ\n");
-		printf("ÇëÊäÈëÄãµÄÑ¡Ôñ:\n");
+		printf("---------------------------------------æœ¬ç¨‹åºæœ‰ä»¥ä¸‹åŠŸèƒ½---------------------------------\n");
+		printf("\t\t0:é€€å‡ºç¨‹åº\n");
+		printf("\t\t1:è¾“å…¥æœªæ¥çš„ä¸€ä¸ªæ—¥æœŸï¼Œè¾“å‡ºè·ç¦»ä»Šå¤©æœ‰å¤šä¹…\n");
+		printf("\t\t2:è¾“å…¥ä¸€ä¸ªå¹´ä»½ï¼Œå°†è¯¥å¹´æ—¥åŽ†è¾“å‡ºåˆ°æ–‡ä»¶ä¸­\n");
+		printf("\t\t3:è¾“å…¥å¹´ä»½æœˆä»½,å°†æ­¤å¹´æ­¤æœˆçš„æ—¥åŽ†è¾“å‡ºåˆ°å±å¹•ä¸­\n");
+		printf("è¯·è¾“å…¥ä½ çš„é€‰æ‹©:\n");
 		do {
 			choose = input();
 			if (choose == -1)
 			{
-				printf("Ñ¡ÔñÓÐ´íÎó£¬Çë°´ËµÃ÷ÖØÐÂÊäÈë:\n");
+				printf("é€‰æ‹©æœ‰é”™è¯¯ï¼Œè¯·æŒ‰è¯´æ˜Žé‡æ–°è¾“å…¥:\n");
 			}
 		} while (choose == -1);
 		printf("------------------------------\n");
-		printf("ÄúµÄÑ¡ÔñÎª¹¦ÄÜ%d\n\n", choose);
+		printf("æ‚¨çš„é€‰æ‹©ä¸ºåŠŸèƒ½%d\n\n", choose);
 
 		switch (choose)
 		{
 		case 0: {
-			printf("³ÌÐòÒÑ¾­ÍË³ö£¬»¶Ó­ÏÂ´ÎÊ¹ÓÃ£¡ÔÙ¼û£¡\n");
+			printf("ç¨‹åºå·²ç»é€€å‡ºï¼Œæ¬¢è¿Žä¸‹æ¬¡ä½¿ç”¨ï¼å†è§ï¼\n");
 			return 0;
 		}
 		case 1: {
